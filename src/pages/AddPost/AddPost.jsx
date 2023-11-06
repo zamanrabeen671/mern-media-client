@@ -100,7 +100,7 @@ export const AddPost = ({ users }) => {
             addedby: users?._id
         }
         try {
-            const res = await axios.post('http://localhost:5000/post/create', formData)
+            const res = await axios.post('https://mern-media-server.vercel.app/post/create', formData)
             console.log(res)
             setMedia(null)
             setDescroption('')

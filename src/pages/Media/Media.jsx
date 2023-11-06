@@ -10,7 +10,7 @@ export const Media = () => {
     const users = localStorage.getItem('items') && JSON.parse(localStorage.getItem('items'))
 
     useEffect(() => {
-        axios.get('http://localhost:5000/post').then((res) => {
+        axios.get('https://mern-media-server.vercel.app/post').then((res) => {
             setPost(res.data.posts);
             console.log(res.data.posts)
             setLoading(false)

@@ -89,7 +89,7 @@ export const Header = () => {
     const [user, setUser] = useState({})
     const uid = localStorage.getItem('uid')
     useEffect(() => {
-        axios.get(`http://localhost:5000/auth/${uid}`).then((res) => {
+        axios.get(`https://mern-media-server.vercel.app/auth/${uid}`).then((res) => {
             setUser(res.data.user)
             localStorage.setItem('items', JSON.stringify(res.data.user))
         }).catch((err) => console.log(err))

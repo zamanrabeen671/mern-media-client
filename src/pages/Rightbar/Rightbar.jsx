@@ -15,11 +15,11 @@ export const Rightbar = () => {
   const [post, setPost] = useState([]);
   const [contributor, setContributor] = useState([])
   useEffect(() => {
-    axios.get('http://localhost:5000/post/topPost').then((res) => setPost(res.data.post)).catch((err) => console.log(err))
+    axios.get('https://mern-media-server.vercel.app/post/topPost').then((res) => setPost(res.data.post)).catch((err) => console.log(err))
   }, [])
 
   useEffect(() => {
-    axios.get('http://localhost:5000/post/topContributor').then((res) => setContributor(res.data.users)).catch((err) => console.log(err))
+    axios.get('https://mern-media-server.vercel.app/post/topContributor').then((res) => setContributor(res.data.users)).catch((err) => console.log(err))
   }, [])
   return (
     <Box flex={2} p={2} sx={{ display: { xs: "none", sm: "block" } }}>

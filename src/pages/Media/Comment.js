@@ -14,7 +14,7 @@ export const Comment = ({ postId }) => {
             commentText: commentText
         }
         try {
-            const res = await axios.post('http://localhost:5000/comment/add', formData)
+            const res = await axios.post('https://mern-media-server.vercel.app/comment/add', formData)
             console.log(res)
         } catch (err) {
             console.log(err)
@@ -25,7 +25,7 @@ export const Comment = ({ postId }) => {
             post: postId,
             user: users,
         }
-        axios.post('http://localhost:5000/comment/getCommentbyUser', formData).then((res) => {
+        axios.post('https://mern-media-server.vercel.app/comment/getCommentbyUser', formData).then((res) => {
             setComments(res.data.response)
             // console.log(res.data)
             setCheck(!check)

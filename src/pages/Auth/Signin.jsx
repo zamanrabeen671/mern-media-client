@@ -103,7 +103,7 @@ export const Signin = () => {
         
         // console.log(requiredData)
         try {
-            const saveUser = await axios.post('http://localhost:5000/auth/saveUser', data)
+            const saveUser = await axios.post('https://mern-media-server.vercel.app/auth/saveUser', data)
             console.log(saveUser)
             localStorage.setItem('uid', saveUser.data?._id)
             navigate('/')
@@ -115,7 +115,7 @@ export const Signin = () => {
     const getUsers = async (data) => {
 
         try {
-            const saveUser = await axios.get(`http://localhost:5000/auth/checkedUser/${data.uid}`)
+            const saveUser = await axios.get(`https://mern-media-server.vercel.app/auth/checkedUser/${data.uid}`)
             console.log(saveUser)
             localStorage.setItem('uid', saveUser.data?._id)
             navigate('/')

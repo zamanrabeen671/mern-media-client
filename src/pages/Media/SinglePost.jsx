@@ -15,7 +15,7 @@ const SinglePost = () => {
   const [loader, setLoader] = useState(true);
   const [checkedReaction, setCheckedReaction] = useState(false)
   useEffect(() => {
-    axios.get(`http://localhost:5000/post/${postId}`).then((res) => {
+    axios.get(`https://mern-media-server.vercel.app/post/${postId}`).then((res) => {
       setPost(res.data.post)
       setLoader(false)
     })
@@ -25,7 +25,7 @@ const SinglePost = () => {
     const formData = {
       user: users,
     }
-    axios.post('http://localhost:5000/reaction/getReactionById', formData).then((res) => {
+    axios.post('https://mern-media-server.vercel.app/reaction/getReactionById', formData).then((res) => {
       setReaction(res.data.response)
       console.log(res.data.response)
     }).catch((err) => console.log(err))
@@ -38,7 +38,7 @@ const SinglePost = () => {
       reactionType: data
     }
     try {
-      const res = await axios.post('http://localhost:5000/reaction/add', formData)
+      const res = await axios.post('https://mern-media-server.vercel.app/reaction/add', formData)
       console.log(res)
       setCheckedReaction((prev) => !prev)
     } catch (err) {

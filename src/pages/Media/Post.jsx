@@ -26,7 +26,7 @@ export default function Post({ item }) {
 
       user: users,
     }
-    axios.post('http://localhost:5000/reaction/getReactionById', formData).then((res) => {
+    axios.post('https://mern-media-server.vercel.app/reaction/getReactionById', formData).then((res) => {
       setReaction(res.data.response)
       console.log(res.data.response)
     }).catch((err) => console.log(err))
@@ -39,7 +39,7 @@ export default function Post({ item }) {
       reaction: data
     }
     try {
-      const res = await axios.post('http://localhost:5000/reaction/add', formData)
+      const res = await axios.post('https://mern-media-server.vercel.app/reaction/add', formData)
       console.log(res)
       setCheckedReaction((prev) => !prev)
     } catch (err) {
